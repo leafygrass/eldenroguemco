@@ -17,15 +17,8 @@ public class Player {
         this.cJob.initialJob();
      }
 
-
-
-    /**
-     * Sets the name of the player.
-     * 
-     * @param strNewName The new name of the player.
-     */
-    public void setPlayerName(String strNewName) {
-        this.strName = strNewName;
+    public void newPlayerName(String strNewName) {
+        setPlayerName(strNewName);
     }
 
     /**
@@ -46,8 +39,22 @@ public class Player {
         return cJob.getStrJobName();
     }
 
+    /**
+     * Retrieves the name of the player's job.
+     * 
+     * @return The name of the player's job.
+     */
     public Job getPlayerJob() {
         return this.cJob;
+    }
+
+    /**
+     * Sets the name of the player.
+     * 
+     * @param strNewName The new name of the player.
+     */
+    private void setPlayerName(String strNewName) {
+        this.strName = strNewName;
     }
 
 

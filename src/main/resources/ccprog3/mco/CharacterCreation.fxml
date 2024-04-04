@@ -12,6 +12,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.CharacterCreationController">
    <children>
+      <ImageView fitHeight="720.0" fitWidth="1330.0" layoutX="-43.0" pickOnBounds="true">
+         <image>
+            <Image url="@photos/Background/ChapelAnticipation.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="JobClassImage" fitHeight="720.0" fitWidth="1280.0" layoutX="-2.0" opacity="0.85" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
          <image>
             <Image url="@photos/black.png" />
@@ -22,31 +27,34 @@
             <Font name="Constantia" size="65.0" />
          </font>
          <effect>
-            <Glow />
+            <Glow level="1.0" />
          </effect>
       </Label>
-      <Label layoutX="22.0" layoutY="30.0" text="Character Creation" textFill="#e9e6a9">
+      <Label layoutX="40.0" layoutY="44.0" text="Character Creation" textFill="#e9e6a9">
          <font>
-            <Font size="45.0" />
+            <Font name="Constantia" size="50.0" />
          </font>
+         <effect>
+            <Glow level="0.5" />
+         </effect>
       </Label>
-      <TextField fx:id="CheckName" layoutX="160.0" layoutY="152.0" prefHeight="55.0" prefWidth="350.0" promptText="Enter Name" />
+      <TextField fx:id="CheckName" layoutX="160.0" layoutY="152.0" onKeyTyped="#checkNameInput" prefHeight="55.0" prefWidth="350.0" promptText="Enter Name" />
       <Label layoutX="22.0" layoutY="146.0" text="Name" textFill="#e9e6a9">
          <font>
-            <Font size="45.0" />
+            <Font name="Leelawadee UI" size="45.0" />
          </font>
       </Label>
       <AnchorPane layoutX="22.0" layoutY="82.0" onMousePressed="#populateChoiceBox" prefWidth="1162.0">
          <children>
             <ChoiceBox fx:id="SelectClass" layoutX="204.0" layoutY="149.0" onMousePressed="#populateChoiceBox" prefHeight="50.0" prefWidth="350.0" />
-            <ImageView fx:id="ShowClassDesign" fitHeight="506.0" fitWidth="389.0" layoutX="864.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ShowClassDesign" fitHeight="506.0" fitWidth="389.0" layoutX="826.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@photos/defaultStuff.png" />
                </image>
             </ImageView>
             <Label layoutY="139.0" text="Job Class:" textFill="#e9e6a9">
                <font>
-                  <Font size="45.0" />
+                  <Font name="Leelawadee UI" size="45.0" />
                </font>
             </Label>
          </children>

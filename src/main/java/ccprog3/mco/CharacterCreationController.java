@@ -4,16 +4,18 @@ import java.io.IOException;
 
 import ccprog3.mco.Model.Player;
 import ccprog3.mco.Model.JobModel.JobDatabase;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 public class CharacterCreationController {
 
     private boolean nameInput = false;
-    private boolean classInput = false;
+    private boolean classInput = true;
     private boolean populated = false;
 
     private Player cPlayer = new Player(); 
@@ -21,7 +23,7 @@ public class CharacterCreationController {
     @FXML
     private void switchToGameLobby() throws IOException {
         if (nameInput == true && classInput == true) Driver.setRoot("GameLobby");
-        else if (nameInput == false || classInput ==false) {
+        else if (nameInput == false && classInput == false) {
             Alert errorAlert = new Alert(AlertType.ERROR);
                 errorAlert.setHeaderText("Input not valid");
                 errorAlert.setContentText("No Name and Class Selected");
@@ -59,11 +61,13 @@ public class CharacterCreationController {
     @FXML
     private TextField CheckName;
 
-
-    // @FXML
-    // private void checkNameInput() {
-    //     if if (strNewName.length() >= 25 || strNewName.length() <=1 ) {} 
+    @FXML
+     private void checkNameInput(KeyEvent event) {
+    	String input = CheckName.getText();
+        if (input.length() > 25 || input.length() <=1) {
+        	nameInput = false;
+        } else nameInput = true;
         
-    // }
+    }
     
 }
