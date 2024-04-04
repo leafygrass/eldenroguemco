@@ -2,85 +2,140 @@ package ccprog3.mco.Model.Enemy;
 
 import java.util.Random;
 
-public class EnemyDatabase extends EnemyTemplate {
+public class EnemyDatabase {
+    private String enemyName = "";
+    private double healthPoints = 0;
+    private int enemyAttack = 0;
+    private int minimumEnemyAttack = 0;
+    private int maximumEnemyAttack = 0;
+    private double physicalDefense = 0;
+    private double sorceryDefense = 0;
+    private double incantationDefense = 0;
+    private Random random;
+    private int currentArrayArea = 0;
 
-    public EnemyDatabase(int enemyHP, int enemyATK, double enemyphysDEF, double enemysrcDEF, double enemyincDEF, String enemyName) {
-        super(enemyHP, enemyATK, enemyphysDEF, enemysrcDEF, enemyincDEF, enemyName);
+    public EnemyDatabase() {
+        this.random = new Random();
     }
 
-    /**
-     * This method generates an enemy based on certain conditions such as <br>
-     * the area index and its randomized type.
-     *
-     * @param areaIndex The current area index
-     * @return The generated enemy
-     */
-    public EnemyTemplate generateEnemy(int areaIndex) {
-        Random random = new Random();
-        int randomNumber = random.nextInt(3) + 1;
+    public void setCurrentArrayArea(int currentArrayArea) {
+        this.currentArrayArea = currentArrayArea;
+    }
 
-        if (randomNumber == 1) {
-            int ENEMY_HEALTH = random.nextInt(11) + 20;
-            int ENEMY_ATTACK = random.nextInt(11) + 70;
-            setEnemyStats(ENEMY_HEALTH, ENEMY_ATTACK, 0.20, 0.15, 0.10);
+    public int getArrayArea() {
+        return currentArrayArea;
+    }
 
-            if (areaIndex == 1) {
-                setEnemyName("Godrick Soldier");
-            } 
-        } else if (randomNumber == 2) {
-            int ENEMY_HEALTH = random.nextInt(11) + 25;
-            int ENEMY_ATTACK = random.nextInt(11) + 110;
-            setEnemyStats(ENEMY_HEALTH, ENEMY_ATTACK, 0.50, 0.15, 0.20);
-            if (areaIndex == 1) {
-                setEnemyName("Godrick Archer");
-            } 
-        } else if (randomNumber == 3) {
-            int ENEMY_HEALTH = random.nextInt(11) + 70;
-            int ENEMY_ATTACK = random.nextInt(11) + 120;
-            setEnemyStats(ENEMY_HEALTH, ENEMY_ATTACK, 0.25, 0.25, 0.20);
+    public int getminimumEnemyAttack() {
+        return minimumEnemyAttack;
+    }
 
-            if (areaIndex == 1) {
-                setEnemyName("Godrick Knight");
-            } 
+    public int getmaximumEnemyAttack() {
+        return maximumEnemyAttack;
+    }
+
+    public double getCurrentHealthPoints() {
+        return healthPoints;
+    }
+
+    public void setCurrentHealthPoints(double currentHealthPoints) {
+        this.healthPoints = currentHealthPoints;
+    }
+
+    private void initializeMob(String name, int minHealth, int maxHealth, int minAttack, int maxAttack,
+                               double physicalDef, double sorceryDef, double incantationDef) {
+        this.enemyName = name;
+        this.healthPoints = random.nextInt(maxHealth - minHealth + 1) + minHealth;
+        this.minimumEnemyAttack = minAttack;
+        this.maximumEnemyAttack = maxAttack;
+        this.enemyAttack = random.nextInt(maxAttack - minAttack + 1) + minAttack;
+        this.physicalDefense = physicalDef;
+        this.sorceryDefense = sorceryDef;
+        this.incantationDefense = incantationDef;
+        setCurrentHealthPoints(healthPoints);
+    }
+
+    private void initializeBoss(String name, int healthPoints, int minAttack, int maxAttack,
+                                double physicalDef, double sorceryDef, double incantationDef) {
+        this.enemyName = name;
+        this.healthPoints = healthPoints;
+        this.enemyAttack = random.nextInt(maxAttack - minAttack + 1) + minAttack;
+        this.physicalDefense = physicalDef;
+        this.sorceryDefense = sorceryDef;
+        this.incantationDefense = incantationDef;
+        setCurrentHealthPoints(healthPoints);
+    }
+
+    public void createGodrickSoldier() {
+        initializeMob("Godrick Soldier", 20, 30, 70, 80, 0.20, 0.15, 0.10);
+    }
+
+    public void createGodrickArcher() {
+        initializeMob("Godrick Archer", 25, 36, 110, 121, 0.50, 0.15, 0.20);
+    }
+
+    public void createGodrickKnight() {
+        initializeMob("Godrick Knight", 70, 81, 120, 131, 0.25, 0.25, 0.25);
+    }
+
+    public void createLivingJar() {
+        initializeMob("Living Jar", 20, 30, 70, 80, 0.20, 0.15, 0.10);
+    }
+
+    public void createGlinstoneSorcerer() {
+        initializeMob("Glinstone Sorcerer", 25, 36, 110, 121, 0.50, 0.15, 0.20);
+    }
+
+    public void createBattlemage() {
+        initializeMob("Battlemage", 70, 81, 120, 131, 0.25, 0.25, 0.25);
+    }
+
+    public void createGodrickTheGrafted() {
+        initializeBoss("Godrick The Grafted", 200, 150, 300, 0.35, 0.20, 0.15);
+    }
+
+    public void createRennalaQueenOfTheFullMoon() {
+        initializeBoss("Rennala, Queen of the Full Moon", 400, 200, 300, 0.15, 0.35, 0.25);
+    }
+
+    public void createTheEldenBeast() {
+        initializeBoss("The Elden Beast", 800, 250, 500, 0.25, 0.50, 0.40);
+    }
+
+    public int getEnemyAttack() {
+        return enemyAttack;
+    }
+
+    public double getHealthPoints() {
+        return healthPoints;
+    }
+
+    public String getEnemyName() {
+        return enemyName;
+    }
+
+    public double getPhysicalDefense() {
+        return physicalDefense;
+    }
+
+    public double getSorceryDefense() {
+        return sorceryDefense;
+    }
+
+    public double getIncantationDefense() {
+        return incantationDefense;
+    }
+
+    public void createBossEnemy() {
+        if (getArrayArea() == 0) {
+            createGodrickTheGrafted();
+        } else if (getArrayArea() == 1) {
+            createRennalaQueenOfTheFullMoon();
+        } else if (getArrayArea() == 2) {
+            createTheEldenBeast();
         }
-
-        return new EnemyTemplate(getEnemyHP(), getEnemyATK(), getEnemyPhysDEF(), getEnemySRCDEF(), getEnemyIncDEF(), getEnemyName());
-    }
-
-    /**
-     * This method is used to generate a boss enemy based on the area index.
-     *
-     * @param areaIndex Current area index
-     * @return The generated boss enemy
-     */
-    public EnemyTemplate generateBoss(int areaIndex) {
-        Random random = new Random();
-        int ENEMY_ATTACK;
-
-        if (areaIndex == 1) {
-            ENEMY_ATTACK = random.nextInt(151) + 150;
-            setEnemyStats(200, ENEMY_ATTACK, 0.35, 0.20, 0.15);
-            setEnemyName("Godrick the Grafted");
-        } else if (areaIndex == 2) {
-            ENEMY_ATTACK = random.nextInt(101) + 200;
-            setEnemyStats(400, ENEMY_ATTACK, 0.15, 0.35, 0.25);
-            setEnemyName("Rennala, Queen of the Moon");
-        } else if (areaIndex == 3) {
-            ENEMY_ATTACK = random.nextInt(251) + 250;
-            setEnemyStats(800, ENEMY_ATTACK, 0.25, 0.50, 0.40);
-            setEnemyName("The Elden Beast");
-        }
-
-        return new EnemyTemplate(getEnemyHP(), getEnemyATK(), getEnemyPhysDEF(), getEnemySRCDEF(), getEnemyIncDEF(), getEnemyName());
-    }
-
-    private void setEnemyStats(int enemyHP, int enemyATK, double enemyphysDEF, double enemysrcDEF, double enemyincDEF) {
-        setEnemyHP(enemyHP);
-        setEnemyATK(enemyATK);
-        setEnemyPhysDEF(enemyphysDEF);
-        setEnemySrcDEF(enemysrcDEF);
-        setEnemyIncDEF(enemyincDEF);
     }
 }
+
 
 

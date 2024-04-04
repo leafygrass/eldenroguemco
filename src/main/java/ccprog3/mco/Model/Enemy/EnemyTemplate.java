@@ -1,5 +1,6 @@
 package ccprog3.mco.Model.Enemy;
 
+/* 
 public class EnemyTemplate {
     protected String enemyName;
     protected int enemyHP;
@@ -64,5 +65,5 @@ public class EnemyTemplate {
     public void setEnemyIncDEF(double enemyincDEF) {
         this.enemyincDEF = enemyincDEF;
     }
-}
+}*/
 
