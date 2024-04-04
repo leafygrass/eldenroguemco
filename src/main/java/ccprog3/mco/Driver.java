@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import ccprog3.mco.Model.Player;
+
 /**
  * JavaFX App
  */

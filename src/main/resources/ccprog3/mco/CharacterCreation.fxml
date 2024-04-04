@@ -38,7 +38,7 @@
             <Glow level="0.5" />
          </effect>
       </Label>
-      <TextField fx:id="CheckName" layoutX="160.0" layoutY="152.0" onKeyTyped="#checkNameInput" prefHeight="55.0" prefWidth="350.0" promptText="Enter Name" />
+      <TextField fx:id="CheckName" layoutX="160.0" layoutY="152.0" onKeyTyped="#checkNameInput" onMouseClicked="#checkNameInput" prefHeight="55.0" prefWidth="350.0" promptText="Enter Name" />
       <Label layoutX="22.0" layoutY="146.0" text="Name" textFill="#e9e6a9">
          <font>
             <Font name="Leelawadee UI" size="45.0" />

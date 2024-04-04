@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.GameLobbyController">
    <children>
       <ImageView fitHeight="719.0" fitWidth="1320.0" opacity="0.95" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -58,9 +58,9 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="203.0" layoutY="144.0" prefHeight="270.0" prefWidth="339.0">
+      <VBox layoutX="203.0" layoutY="144.0" prefHeight="270.0" prefWidth="540.0">
          <children>
-            <Label prefHeight="70.0" prefWidth="138.0" text="&lt;name&gt;" textFill="#e9e6a9">
+            <Label fx:id="CharacterName" prefHeight="63.0" prefWidth="546.0" textFill="#e9e6a9" wrapText="true">
                <font>
                   <Font size="25.0" />
                </font>

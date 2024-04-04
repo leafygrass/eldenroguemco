@@ -6,7 +6,7 @@ import ccprog3.mco.Model.JobModel.JobDatabase;
 public class Player {
 
     private int dRunes;
-    private String strName = "";
+    private String strName;
     private Job cJob;
     private JobDatabase cJobList;
 
