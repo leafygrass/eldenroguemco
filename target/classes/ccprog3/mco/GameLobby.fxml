@@ -60,22 +60,22 @@
       </VBox>
       <VBox layoutX="203.0" layoutY="144.0" prefHeight="270.0" prefWidth="540.0">
          <children>
-            <Label fx:id="CharacterName" prefHeight="63.0" prefWidth="546.0" textFill="#e9e6a9" wrapText="true">
+            <Label fx:id="CharacterName" prefHeight="63.0" prefWidth="546.0" text="&lt;name&gt;" textFill="#e9e6a9" wrapText="true">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label prefHeight="68.0" prefWidth="203.0" text="&lt;jc&gt;" textFill="#e9e6a9">
+            <Label fx:id="ChosenJobClass" prefHeight="68.0" prefWidth="203.0" text="&lt;jc&gt;" textFill="#e9e6a9">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label prefHeight="78.0" prefWidth="109.0" text="&lt;lvl&gt;" textFill="#e9e6a9">
+            <Label fx:id="JobLvl" prefHeight="78.0" prefWidth="109.0" text="&lt;lvl&gt;" textFill="#e9e6a9">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label prefHeight="69.0" prefWidth="280.0" text="&lt;runes&gt;" textFill="#e9e6a9">
+            <Label fx:id="Runes" prefHeight="69.0" prefWidth="280.0" text="&lt;runes&gt;" textFill="#e9e6a9">
                <font>
                   <Font size="25.0" />
                </font>

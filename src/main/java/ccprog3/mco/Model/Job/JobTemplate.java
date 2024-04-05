@@ -1,4 +1,4 @@
-package ccprog3.mco.Model.JobModel;
+package ccprog3.mco.Model.Job;
 
 public abstract class JobTemplate {
     protected String strJobName = "";

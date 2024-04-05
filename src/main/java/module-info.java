@@ -6,5 +6,5 @@ module ccprog3.mco {
     opens ccprog3.mco to javafx.fxml;
     exports ccprog3.mco;
     exports ccprog3.mco.Model;
-    exports ccprog3.mco.Model.JobModel;
+    exports ccprog3.mco.Model.Job;
 }

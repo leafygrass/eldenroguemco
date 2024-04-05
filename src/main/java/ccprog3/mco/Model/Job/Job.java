@@ -1,12 +1,9 @@
-package ccprog3.mco.Model.JobModel;
+package ccprog3.mco.Model.Job;
 
-public class JobDatabase extends JobTemplate{
+public class Job extends JobTemplate{
 
-    protected JobDatabase(String strJobName, int dLevel, int dHP, int dDex, int dInt, int dEnd, int dStr, int dFth) {
+	public Job(String strJobName, int dLevel, int dHP, int dDex, int dInt, int dEnd, int dStr, int dFth) {
         super(strJobName, dLevel, dHP, dDex, dInt, dEnd, dStr, dFth);
-    }
-
-    protected JobDatabase() {
     }
 
       /**
@@ -21,14 +18,14 @@ public class JobDatabase extends JobTemplate{
     * - Prophet: A job with high faith and strength.
     */
 
-    protected static final JobDatabase[] arrJobList = { 
-        new JobDatabase("", 0, 0, 0, 0, 0, 0, 0),
-        new JobDatabase("Vagabond", 9, 15, 13, 9, 11, 14, 9),
-        new JobDatabase("Samurai", 9, 12, 15, 9, 13, 12, 8),
-        new JobDatabase("Warrior", 8, 11, 16, 10, 11, 10, 8),
-        new JobDatabase("Hero", 7, 14, 9, 7, 12, 16, 8),
-        new JobDatabase("Astrologer", 6, 9, 12, 16, 9, 8, 7),
-        new JobDatabase("Prophet", 7, 10, 10, 7, 8, 11, 16),
+    protected static final Job[] arrJobList = { 
+        new Job("", 0, 0, 0, 0, 0, 0, 0),
+        new Job("Vagabond", 9, 15, 13, 9, 11, 14, 9),
+        new Job("Samurai", 9, 12, 15, 9, 13, 12, 8),
+        new Job("Warrior", 8, 11, 16, 10, 11, 10, 8),
+        new Job("Hero", 7, 14, 9, 7, 12, 16, 8),
+        new Job("Astrologer", 6, 9, 12, 16, 9, 8, 7),
+        new Job("Prophet", 7, 10, 10, 7, 8, 11, 16),
     }; 
 
     /**
@@ -37,11 +34,11 @@ public class JobDatabase extends JobTemplate{
     * @return An array containing pre-defined Job objects representing different jobs in the game.
     */
     
-    public JobDatabase[] getJobList() {
+    public Job[] getJobList() {
         return arrJobList;
     }
 
-    public JobDatabase getSpecificJobClassbyIndex(int dIndex) {
+    public Job getSpecificJobClassbyIndex(int dIndex) {
         if (dIndex >= 1 && dIndex < arrJobList.length) {
             return arrJobList[dIndex];
         } else {
@@ -50,7 +47,7 @@ public class JobDatabase extends JobTemplate{
         }
     }
 
-    public JobDatabase initialJob() {
+    public Job initialJob() {
         return arrJobList[0];
     }
     
@@ -63,19 +60,17 @@ public class JobDatabase extends JobTemplate{
         return jobNames;
     }
 
-    public String arrJobListToStringPrint() {
+    public String arrJobListToStringPrintByIndex(int index) {
         StringBuilder strBuilder = new StringBuilder();
-        for (int i = 1; i < arrJobList.length; i++) {
-            JobTemplate job = arrJobList[i];
-            strBuilder.append("\n").append(i + ". Job Class: ").append(job.getStrJobName()).append("\n")
-                        .append("Level: ").append(job.getDLevel()).append("\n")
-                        .append("Health Points: ").append(job.getDHP()).append("\n")
-                        .append("Dexterity: ").append(job.getDDex()).append("\n")
-                        .append("Intelligence: ").append(job.getDInt()).append("\n")
-                        .append("Endurance: ").append(job.getDEnd()).append("\n")
-                        .append("Strength: ").append(job.getDStr()).append("\n")
-                        .append("Faith ").append(job.getDFth()).append("\n");
-        }
+        JobTemplate job = arrJobList[index];
+        strBuilder.append("\n").append(index + ". Job Class: ").append(job.getStrJobName()).append("\n")
+                .append("Level: ").append(job.getDLevel()).append("\n")
+                .append("Health Points: ").append(job.getDHP()).append("\n")
+                .append("Dexterity: ").append(job.getDDex()).append("\n")
+                .append("Intelligence: ").append(job.getDInt()).append("\n")
+                .append("Endurance: ").append(job.getDEnd()).append("\n")
+                .append("Strength: ").append(job.getDStr()).append("\n")
+                .append("Faith ").append(job.getDFth()).append("\n");
         return strBuilder.toString();
     }
 

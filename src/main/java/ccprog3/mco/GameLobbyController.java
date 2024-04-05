@@ -8,14 +8,19 @@ public class GameLobbyController{
     
     @FXML 
     private Label CharacterName;
+    @FXML 
+    private Label ChosenJobClass;
+    @FXML 
+    private Label JobLvl;
+    @FXML 
+    private Label Runes;
+    
     
     private Player gcPlayer;
 
     public void initializeData(Player player) {
         this.gcPlayer = player;
         CharacterName.setText(gcPlayer.getPlayerName());
-        System.out.print(gcPlayer.getPlayerName());
-        // You can use gcPlayer here to initialize UI elements or perform other tasks
     }
     
     
