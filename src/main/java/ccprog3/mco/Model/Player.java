@@ -22,7 +22,10 @@ public class Player {
     public void newJob (Job cJob) {
     	setcJob(cJob);
     }
-
+    
+    public int getRunes() {
+    	return this.dRunes;
+    }
     
     public void newJobByIndex (int index) {
     	if (index == 0 ) newJob(cJob.getSpecificJobClassbyIndex(0));

@@ -21,6 +21,9 @@ public class GameLobbyController{
     public void initializeData(Player player) {
         this.gcPlayer = player;
         CharacterName.setText(gcPlayer.getPlayerName());
+        ChosenJobClass.setText(gcPlayer.getPlayerJobName());
+        JobLvl.setText(String.valueOf(gcPlayer.getPlayerJob().getDLevel()));
+        Runes.setText(Integer.toString(gcPlayer.getRunes()));
     }
     
     
