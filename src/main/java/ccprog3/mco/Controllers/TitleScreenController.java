@@ -1,6 +1,8 @@
-package ccprog3.mco;
+package ccprog3.mco.Controllers;
 
 import java.io.IOException;
+
+import ccprog3.mco.Driver;
 import javafx.fxml.FXML;
 
 public class TitleScreenController {
@@ -11,9 +13,9 @@ public class TitleScreenController {
     }
 
     @FXML
-    public void exitGame() {
+    private void exitGame() {
         System.exit(0);
     }
-    
-    
+
+
 }

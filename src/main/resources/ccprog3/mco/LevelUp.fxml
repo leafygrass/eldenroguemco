@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.Controllers.CharacterLevelUpController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/black.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.45" pickOnBounds="true">
+         <image>
+            <Image url="@photos/Background/ezgif-5-0a607081d1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="27.0" prefHeight="61.0" prefWidth="467.0" text="Character Level Up" textFill="#e9e6a9">
+         <font>
+            <Font name="Constantia" size="51.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="481.0" layoutY="495.0" prefHeight="60.0" prefWidth="182.0" text="Player Runes: " textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="CurrentStats" alignment="TOP_LEFT" layoutX="104.0" layoutY="151.0" prefHeight="374.0" prefWidth="205.0" text="Current Stats" textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="NewStats" alignment="TOP_LEFT" layoutX="980.0" layoutY="150.0" prefHeight="374.0" prefWidth="205.0" text="New Stats" textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="GLButton" layoutX="57.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToGameLobby" prefHeight="79.0" prefWidth="328.0" text="Go Back to Game Lobby">
+         <font>
+            <Font name="Leelawadee" size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="486.0" layoutY="569.0" prefHeight="60.0" prefWidth="182.0" text="Rune Cost:" textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+      <VBox layoutX="530.0" layoutY="171.0">
+         <children>
+            <Button fx:id="healthButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Health">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="dexButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Dexterity">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="intButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Intelligence">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="enduranceButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Endurance">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="strButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Strength">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="fthButton" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="230.0" text="Level Faith">
+               <font>
+                  <Font name="Leelawadee" size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="playerRunes" layoutX="632.0" layoutY="495.0" prefHeight="60.0" prefWidth="182.0" text="&lt;runes&gt;" textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="626.0" layoutY="568.0" prefHeight="60.0" prefWidth="182.0" text="0" textFill="#e9e6a9">
+         <font>
+            <Font name="Leelawadee" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

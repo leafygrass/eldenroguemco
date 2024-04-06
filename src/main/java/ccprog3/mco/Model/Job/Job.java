@@ -1,6 +1,6 @@
 package ccprog3.mco.Model.Job;
 
-public class Job extends JobTemplate{
+public class Job extends JobWeaponTemplate{
 
 	public Job(String strJobName, int dLevel, int dHP, int dDex, int dInt, int dEnd, int dStr, int dFth) {
         super(strJobName, dLevel, dHP, dDex, dInt, dEnd, dStr, dFth);
@@ -18,43 +18,37 @@ public class Job extends JobTemplate{
     * - Prophet: A job with high faith and strength.
     */
 
-    protected static final Job[] arrJobList = { 
-        new Job("", 0, 0, 0, 0, 0, 0, 0),
+    protected static final Job[] arrJobList = {
         new Job("Vagabond", 9, 15, 13, 9, 11, 14, 9),
         new Job("Samurai", 9, 12, 15, 9, 13, 12, 8),
         new Job("Warrior", 8, 11, 16, 10, 11, 10, 8),
         new Job("Hero", 7, 14, 9, 7, 12, 16, 8),
         new Job("Astrologer", 6, 9, 12, 16, 9, 8, 7),
         new Job("Prophet", 7, 10, 10, 7, 8, 11, 16),
-    }; 
+    };
 
     /**
     * Retrieves the array of pre-defined Job objects.
     *
     * @return An array containing pre-defined Job objects representing different jobs in the game.
     */
-    
+
     public Job[] getJobList() {
         return arrJobList;
     }
 
     public Job getSpecificJobClassbyIndex(int dIndex) {
-        if (dIndex >= 1 && dIndex < arrJobList.length) {
+        if (dIndex >= 0 && dIndex < arrJobList.length) {
             return arrJobList[dIndex];
         } else {
             System.out.println("Not Found");
-            return null; 
+            return null;
         }
     }
 
-    public Job initialJob() {
-        return arrJobList[0];
-    }
-    
-
     public static String[] getJobNames() {
         String[] jobNames = new String[arrJobList.length];
-        for (int i = 1; i < arrJobList.length; i++) {
+        for (int i = 0; i < arrJobList.length; i++) {
             jobNames[i] = arrJobList[i].getStrJobName();
         }
         return jobNames;
@@ -62,8 +56,8 @@ public class Job extends JobTemplate{
 
     public String arrJobListToStringPrintByIndex(int index) {
         StringBuilder strBuilder = new StringBuilder();
-        JobTemplate job = arrJobList[index];
-        strBuilder.append("\n").append(index + ". Job Class: ").append(job.getStrJobName()).append("\n")
+        JobWeaponTemplate job = arrJobList[index];
+        strBuilder.append("\n")
                 .append("Level: ").append(job.getDLevel()).append("\n")
                 .append("Health Points: ").append(job.getDHP()).append("\n")
                 .append("Dexterity: ").append(job.getDDex()).append("\n")
@@ -84,7 +78,7 @@ public class Job extends JobTemplate{
         if (dIndex >= 0 && dIndex < arrJobList.length) {
             return arrJobList[dIndex].getStrJobName();
         } else {
-            return "Not Found"; 
+            return "Not Found";
         }
     }
 
@@ -99,7 +93,7 @@ public class Job extends JobTemplate{
             return arrJobList[dIndex].getDLevel();
         } else {
             System.out.println("Not Found");
-            return -1; 
+            return -1;
         }
     }
 
@@ -186,5 +180,5 @@ public class Job extends JobTemplate{
             return -1;
         }
     }
-    
+
 }

@@ -1,50 +1,64 @@
-package ccprog3.mco.Model;
+package ccprog3.mco.Model.Player;
 
+import ccprog3.mco.Controllers.CharacterDetailManager;
 import ccprog3.mco.Model.Job.Job;
 
-public class Player {
+public class GamePlayer {
 
     private int dRunes;
     private String strName;
     private Job cJob;
 
-    public Player(){
+    public GamePlayer(){
         this.strName = "";
         this.dRunes = 0;
         this.cJob = new Job("", 0, 0, 0, 0, 0, 0, 0);
-        this.cJob.initialJob();
      }
+
+    public GamePlayer(CharacterDetailManager detail) {
+    	this.strName = detail.getPlayerDetails().getPlayerName();
+    	this.dRunes = detail.getPlayerDetails().getRunes();
+    	this.cJob = detail.getPlayerDetails().getPlayerJob();
+    }
 
     public void newPlayerName(String strNewName) {
     	setStrName(strNewName);
     }
-    
+
     public void newJob (Job cJob) {
     	setcJob(cJob);
     }
-    
+
     public int getRunes() {
     	return this.dRunes;
     }
-    
+
     public void newJobByIndex (int index) {
-    	if (index == 0 ) newJob(cJob.getSpecificJobClassbyIndex(0));
-    	else if (index == 1) newJob(cJob.getSpecificJobClassbyIndex(1));
-    	else if (index == 2 )newJob(cJob.getSpecificJobClassbyIndex(2));
-    	else if (index == 3 )newJob(cJob.getSpecificJobClassbyIndex(3));
-    	else if (index == 4)newJob(cJob.getSpecificJobClassbyIndex(4));
-    	else if (index == 5)newJob(cJob.getSpecificJobClassbyIndex(5));
-    	else if (index == 6)newJob(cJob.getSpecificJobClassbyIndex(6));
+    	if (index == 0 ) {
+			newJob(cJob.getSpecificJobClassbyIndex(0));
+		} else if (index == 1) {
+			newJob(cJob.getSpecificJobClassbyIndex(1));
+		} else if (index == 2 ) {
+			newJob(cJob.getSpecificJobClassbyIndex(2));
+		} else if (index == 3 ) {
+			newJob(cJob.getSpecificJobClassbyIndex(3));
+		} else if (index == 4) {
+			newJob(cJob.getSpecificJobClassbyIndex(4));
+		} else if (index == 5) {
+			newJob(cJob.getSpecificJobClassbyIndex(5));
+		} else if (index == 6) {
+			newJob(cJob.getSpecificJobClassbyIndex(6));
+		}
     }
-    
+
     public void setRunes (int dRunes) {
     	setdRunes(dRunes);
     }
-    
+
 
     /**
      * Retrieves the name of the player.
-     * 
+     *
      * @return The name of the player.
      */
     public String getPlayerName() {
@@ -53,7 +67,7 @@ public class Player {
 
     /**
      * Retrieves the name of the player's job.
-     * 
+     *
      * @return The name of the player's job.
      */
     public String getPlayerJobName() {
@@ -62,7 +76,7 @@ public class Player {
 
     /**
      * Retrieves the name of the player's job.
-     * 
+     *
      * @return The name of the player's job.
      */
     public Job getPlayerJob() {

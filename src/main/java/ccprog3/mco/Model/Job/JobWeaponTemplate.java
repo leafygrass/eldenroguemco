@@ -1,7 +1,7 @@
 package ccprog3.mco.Model.Job;
 
-public abstract class JobTemplate {
-    protected String strJobName = "";
+public abstract class JobWeaponTemplate {
+    protected String strJobWeaponName = "";
     protected int dLevel;
     protected int dHP;
     protected int dDex;
@@ -13,7 +13,7 @@ public abstract class JobTemplate {
     /**
      * Constructs a Job object with the specified attributes.
      *
-     * @param strJobName The name of the job.
+     * @param strJobWeaponName The name of the job.
      * @param dLevel     The level of the job.
      * @param dHP        The hit points of the job.
      * @param dDex       The dexterity of the job.
@@ -21,8 +21,8 @@ public abstract class JobTemplate {
      * @param dStr       The strength of the job.
      * @param dFth       The faith of the job.
      */
-    public JobTemplate(String strJobName, int dLevel, int dHP, int dDex, int dInt, int dEnd, int dStr, int dFth) {
-        this.strJobName = strJobName;
+    public JobWeaponTemplate(String strJobWeaponName, int dLevel, int dHP, int dDex, int dInt, int dEnd, int dStr, int dFth) {
+        this.strJobWeaponName = strJobWeaponName;
         this.dLevel = dLevel;
         this.dHP = dHP;
         this.dDex = dDex;
@@ -32,7 +32,15 @@ public abstract class JobTemplate {
         this.dFth = dFth;
     }
 
-    protected JobTemplate () { //default constructor
+    protected JobWeaponTemplate () { //default constructor
+    	this.strJobWeaponName = "";
+        this.dLevel = 0;
+        this.dHP = 0;
+        this.dDex = 0;
+        this.dInt = 0;
+        this.dEnd = 0;
+        this.dStr = 0;
+        this.dFth = 0;
 
     }
 
@@ -42,7 +50,7 @@ public abstract class JobTemplate {
      * @return The name of the job.
      */
     public String getStrJobName() {
-        return this.strJobName;
+        return this.strJobWeaponName;
     }
 
     /**

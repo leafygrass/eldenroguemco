@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.Controllers.ShopController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@photos/Background/ezgif-7-dc23736ef4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.85" pickOnBounds="true">
+         <image>
+            <Image url="@photos/black.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="70.0" layoutY="14.0" prefHeight="100.0" prefWidth="170.0" text="SHOP" textFill="#e9e6a9">
+         <font>
+            <Font name="Constantia" size="63.0" />
+         </font>
+         <effect>
+            <Glow level="0.69" />
+         </effect>
+      </Label>
+      <Label layoutX="70.0" layoutY="109.0" prefHeight="54.0" prefWidth="237.0" text="Runes in Inventory:" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="467.0" layoutY="505.0" prefHeight="100.0" prefWidth="203.0" text="Runes Cost:" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button layoutX="61.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToGameLobby" prefHeight="88.0" prefWidth="283.0" text="Go Back Game Lobby">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label fx:id="runesCost" layoutX="658.0" layoutY="506.0" prefHeight="100.0" prefWidth="203.0" text="..." textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button layoutX="463.0" layoutY="593.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="283.0" text="Confirm Purchase">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label fx:id="WeaponDetailsView" alignment="TOP_LEFT" layoutX="84.0" layoutY="340.0" prefHeight="209.0" prefWidth="643.0" text="..." textFill="#e9e6a9">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="70.0" layoutY="163.0" prefHeight="54.0" prefWidth="194.0" text="Player Dex:" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label fx:id="PlayerRunes" layoutX="324.0" layoutY="111.0" prefHeight="54.0" prefWidth="316.0" text="&lt;runes&gt;" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label fx:id="PlayerDex" layoutX="225.0" layoutY="163.0" prefHeight="54.0" prefWidth="316.0" text="&lt;playerdex&gt;" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ImageView fx:id="WeaponImage" fitHeight="474.0" fitWidth="390.0" layoutX="854.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="72.0" layoutY="222.0" prefHeight="54.0" prefWidth="271.0" text="Select Weapon Type:" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ChoiceBox fx:id="WPTypeChoiceBox" layoutX="355.0" layoutY="226.0" prefHeight="47.0" prefWidth="372.0" />
+      <Label layoutX="72.0" layoutY="287.0" prefHeight="54.0" prefWidth="271.0" text="Select Weapon:" textFill="#e9e6a9">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ChoiceBox fx:id="WPChoiceBox" layoutX="355.0" layoutY="290.0" prefHeight="47.0" prefWidth="372.0" />
+   </children>
+</Pane>

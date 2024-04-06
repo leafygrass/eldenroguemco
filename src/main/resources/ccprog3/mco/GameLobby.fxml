@@ -2,83 +2,158 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.GameLobbyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.Controllers.GameLobbyController">
    <children>
-      <ImageView fitHeight="719.0" fitWidth="1320.0" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.95" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@photos/black.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="719.0" fitWidth="1320.0" layoutX="359.0" layoutY="-7.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.45" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@photos/ER_golden_order.png" />
+            <Image url="@photos/Background/ezgif-5-0a607081d1.png" />
          </image>
       </ImageView>
-      <Label layoutX="504.0" layoutY="41.0" text="Game Lobby" textFill="#e9e6a9">
+      <Label layoutX="506.0" layoutY="33.0" text="Game Lobby" textFill="#e9e6a9">
          <font>
-            <Font size="60.0" />
+            <Font name="Constantia" size="60.0" />
          </font>
+         <effect>
+            <Glow level="0.91" />
+         </effect>
       </Label>
-      <VBox layoutX="826.0" layoutY="165.0" prefHeight="515.0" prefWidth="333.0">
+      <StackPane layoutX="850.0" layoutY="112.0" prefHeight="528.0" prefWidth="338.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" text="Fast Travel" />
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" text="Level Up " />
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" text="Inventory" />
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" text="Shop" />
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" text="Exit Game" />
+            <VBox prefHeight="515.0" prefWidth="333.0">
+               <children>
+                  <MenuButton fx:id="GLMB" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Fast Travel" textAlignment="CENTER" textFill="#e9e6a9">
+                    <items>
+                      <MenuItem fx:id="SVCConMen" mnemonicParsing="false" onAction="#switchToStormVeilCastle" text="StormVeil Castle" />
+                        <MenuItem fx:id="RLAConMen" mnemonicParsing="false" text="Raya Lucaria Academy" />
+                        <MenuItem fx:id="ETConMen" disable="true" mnemonicParsing="false" text="Elden Throne" visible="false" />
+                    </items>
+                     <font>
+                        <Font name="Leelawadee" size="38.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </MenuButton>
+                  <Button fx:id="LVUP" mnemonicParsing="false" onAction="#switchToCharacterLevelUp" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Level Up " textFill="#e9e6a9" wrapText="true">
+                     <font>
+                        <Font name="Leelawadee" size="38.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="INV" mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Inventory" textFill="#e9e6a9" wrapText="true">
+                     <font>
+                        <Font name="Leelawadee" size="38.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="Shop" mnemonicParsing="false" onAction="#switchToShop" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Shop" textFill="#e9e6a9" wrapText="true">
+                     <font>
+                        <Font name="Leelawadee" size="38.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="exitgame" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToTitleScreen" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Title Screen" textFill="#e9e6a9" wrapText="true">
+                     <font>
+                        <Font name="Leelawadee" size="38.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Button>
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </StackPane>
       <VBox layoutX="62.0" layoutY="144.0" prefHeight="268.0" prefWidth="141.0">
          <children>
-            <Label prefHeight="78.0" prefWidth="109.0" text="Name: " textFill="#e9e6a9">
+            <Label prefHeight="78.0" prefWidth="205.0" text="Name: " textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label prefHeight="68.0" prefWidth="203.0" text="Job Class:" textFill="#e9e6a9">
+            <Label prefHeight="78.0" prefWidth="205.0" text="Job Class:" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label prefHeight="78.0" prefWidth="109.0" text="Level:" textFill="#e9e6a9">
+            <Label prefHeight="78.0" prefWidth="205.0" text="Level:" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label prefHeight="78.0" prefWidth="109.0" text="Runes:" textFill="#e9e6a9">
+            <Label prefHeight="78.0" prefWidth="205.0" text="Runes:" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="203.0" layoutY="144.0" prefHeight="270.0" prefWidth="540.0">
+      <VBox layoutX="200.0" layoutY="144.0" prefHeight="270.0" prefWidth="540.0">
          <children>
-            <Label fx:id="CharacterName" prefHeight="63.0" prefWidth="546.0" text="&lt;name&gt;" textFill="#e9e6a9" wrapText="true">
+            <Label fx:id="CxName" prefHeight="78.0" prefWidth="550.0" text="&lt;name&gt;" textFill="#e9e6a9" wrapText="true">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label fx:id="ChosenJobClass" prefHeight="68.0" prefWidth="203.0" text="&lt;jc&gt;" textFill="#e9e6a9">
+            <Label fx:id="ChosenJobClass" prefHeight="78.0" prefWidth="550.0" text="&lt;jc&gt;" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label fx:id="JobLvl" prefHeight="78.0" prefWidth="109.0" text="&lt;lvl&gt;" textFill="#e9e6a9">
+            <Label fx:id="JobLvl" prefHeight="78.0" prefWidth="550.0" text="&lt;lvl&gt;" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
-            <Label fx:id="Runes" prefHeight="69.0" prefWidth="280.0" text="&lt;runes&gt;" textFill="#e9e6a9">
+            <Label fx:id="Runes" prefHeight="78.0" prefWidth="550.0" text="&lt;runes&gt;" textFill="#e9e6a9">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
+               <effect>
+                  <Glow level="0.53" />
+               </effect>
             </Label>
          </children>
       </VBox>

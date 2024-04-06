@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.CharacterCreationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ccprog3.mco.Controllers.CharacterCreationController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1330.0" layoutX="-43.0" pickOnBounds="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@photos/Background/ChapelAnticipation.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="JobClassImage" fitHeight="720.0" fitWidth="1280.0" layoutY="14.0" opacity="0.85" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
+      <ImageView fx:id="JobClassImage" fitHeight="720.0" fitWidth="1280.0" opacity="0.85" pickOnBounds="true" AnchorPane.leftAnchor="0.0">
          <image>
             <Image url="@photos/black.png" />
          </image>
@@ -38,26 +38,26 @@
             <Glow level="0.5" />
          </effect>
       </Label>
-      <TextField fx:id="CheckName" layoutX="160.0" layoutY="152.0" onKeyTyped="#checkNameInput" onMouseClicked="#checkNameInput" prefHeight="55.0" prefWidth="350.0" promptText="Enter Name" />
-      <Label layoutX="22.0" layoutY="146.0" text="Name" textFill="#e9e6a9">
+      <TextField fx:id="CheckName" layoutX="260.0" layoutY="160.0" onKeyTyped="#checkNameInput" onMouseClicked="#checkNameInput" prefHeight="50.0" prefWidth="350.0" promptText="Enter Name" style="-fx-opacity: 30;" />
+      <Label layoutX="66.0" layoutY="146.0" prefHeight="74.0" prefWidth="184.0" text="Name:" textFill="#e9e6a9">
          <font>
             <Font name="Leelawadee UI" size="45.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="22.0" layoutY="82.0" onMousePressed="#populateChoiceBox" prefHeight="332.0" prefWidth="1216.0">
+      <AnchorPane focusTraversable="true" layoutX="56.0" layoutY="92.0" onMousePressed="#populateChoiceBox" prefHeight="332.0" prefWidth="1216.0">
          <children>
             <ChoiceBox fx:id="SelectClass" layoutX="204.0" layoutY="149.0" onMousePressed="#populateChoiceBox" prefHeight="50.0" prefWidth="350.0" />
-            <ImageView fx:id="ShowClassDesign" fitHeight="506.0" fitWidth="389.0" layoutX="826.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ShowJobImage" fitHeight="500.0" fitWidth="400.0" layoutX="800.0" pickOnBounds="true">
                <image>
-                  <Image url="@photos/defaultStuff.png" />
+                  <Image url="@photos/JobClass/Wretch.png" />
                </image>
             </ImageView>
-            <Label layoutY="139.0" text="Job Class:" textFill="#e9e6a9">
+            <Label layoutX="6.0" layoutY="141.0" text="Job Class:" textFill="#e9e6a9">
                <font>
                   <Font name="Leelawadee UI" size="45.0" />
                </font>
             </Label>
-            <Label fx:id="JobStats" alignment="TOP_LEFT" layoutX="14.0" layoutY="212.0" prefHeight="310.0" prefWidth="639.0" text="..." textFill="#e9e6a9" wrapText="true">
+            <Label fx:id="JobStats" alignment="TOP_LEFT" layoutX="14.0" layoutY="212.0" prefHeight="310.0" prefWidth="639.0" textFill="#e9e6a9" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
