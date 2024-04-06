@@ -81,13 +81,28 @@ public class ShopController {
         WeaponImage.setImage(newImage);
     }
 	
+	private void changeWeapImage2(int index) {
+    	String imagePath = "";
+    	Image newImage = null; 
+    	switch (index) {
+    	case 0: 
+    		imagePath = "/ccprog3/mco/photos/shotgun/shotgun_image.png";
+    		break;
+    	default:
+    	}		
+        newImage = imageCache.computeIfAbsent(imagePath, path -> {
+            // Load the image
+            return new Image(getClass().getResource(path).toExternalForm());
+        });
+        WeaponImage.setImage(newImage);
+    }
 	
 	@FXML
     private ChoiceBox<String> WPTypeChoiceBox;
 	
 	private void populateWPTypeChoiceBox() {
 	    if (!populated) {
-	        WPTypeChoiceBox.getItems().addAll("Sword", "Katana", "Whips", "Greatsword", "Staff", "Seals");
+	        WPTypeChoiceBox.getItems().addAll("Shotgun", "Sword", "Katana", "Whips", "Greatsword", "Staff", "Seals");
 	        populated = true; 
 	    }
 	}
@@ -108,6 +123,21 @@ public class ShopController {
 	private void populateWPChoiceBox(String weaponType) {
 		WPChoiceBox.getItems().clear();
 		switch(weaponType) {
+			case "Shotgun":
+			WPChoiceBox.getItems().addAll(Weapon.getWeaponSwordListName());
+			WPChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue != null && !newValue.isEmpty()) {
+                    switch (newValue) {
+						case "shotgun":
+                        	displayWeapStats(0);
+                            changeWeapImage2(0);
+                            break;
+                        default:
+                    }
+                }
+            });
+
+			break;
 		case "Sword":
 			WPChoiceBox.getItems().addAll(Weapon.getWeaponSwordListName());
 			WPChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

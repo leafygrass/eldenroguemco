@@ -70,6 +70,10 @@ public class Weapon extends JobWeaponTemplate{
 		    new Weapon("Golden Order Seal", 10000, 14, 20, 55, 0, 65, 65),
 		    new Weapon("Dragon Communion Seal", 15000, 18, 25, 60, 0, 75, 80)
 		};
+
+	protected static final Weapon[] arrWeaponShotgunList = {
+			new Weapon("Shotgun", 1234, 999, 999, 999, 999,999,999),
+	    };
 	
     public static Weapon[] getWeaponSwordList() {
         return arrWeaponSwordList;
@@ -93,6 +97,10 @@ public class Weapon extends JobWeaponTemplate{
 
     public static Weapon[] getWeaponSealsList() {
         return arrWeaponSealsList;
+    }
+
+	public static Weapon[] getWeaponShotgunList() {
+        return arrWeaponShotgunList;
     }
     
     public static String[] getWeaponSwordListName() {
@@ -142,10 +150,27 @@ public class Weapon extends JobWeaponTemplate{
         }
         return wpSeals;
     }
+
+	public static String[] getWeaponShotgunListName() {
+        String[] wpShotgun = new String[getWeaponShotgunList().length];
+        for (int i = 0; i < getWeaponShotgunList().length; i++) {
+            wpShotgun[i] = getWeaponShotgunList()[i].getStrJobWeaponName();
+        }
+        return wpShotgun;
+    }
     
     public Weapon getSpecificWeaponSwordbyIndex(int dIndex) {
         if (dIndex >= 0 && dIndex < getWeaponSwordList().length) {
             return getWeaponSwordList()[dIndex];
+        } else {
+            System.out.println("Not Found");
+            return null;
+        }
+    }
+
+	public Weapon getSpecificWeaponShotgunbyIndex(int dIndex) {
+        if (dIndex >= 0 && dIndex < getWeaponShotgunList().length) {
+            return getWeaponShotgunList()[dIndex];
         } else {
             System.out.println("Not Found");
             return null;
@@ -165,8 +190,21 @@ public class Weapon extends JobWeaponTemplate{
                 .append("Faith: ").append(weap.getDFth()).append("\n");
         return strBuilder.toString();
     }
-    
-    
-    
 
+	public String arrWeapShotgunListToStringPrintByIndex(int index) {
+        StringBuilder strBuilder = new StringBuilder();
+        JobWeaponTemplate weap = getWeaponShotgunList()[index];
+        strBuilder.append("\n")
+                .append("Rune Cost: ").append(weap.getDLevel()).append("\n")
+                .append("Dexterity: ").append(weap.getDHP()).append("\n")
+                .append("Health Points: ").append(weap.getDDex()).append("\n")
+                .append("Endurance: ").append(weap.getDInt()).append("\n")
+                .append("Strength: ").append(weap.getDEnd()).append("\n")
+                .append("Intelligence: ").append(weap.getDStr()).append("\n")
+                .append("Faith: ").append(weap.getDFth()).append("\n");
+        return strBuilder.toString();
+    }
+    
+    
+    
 }
