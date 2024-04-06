@@ -124,7 +124,7 @@ public class ShopController {
 		WPChoiceBox.getItems().clear();
 		switch(weaponType) {
 			case "Shotgun":
-			WPChoiceBox.getItems().addAll(Weapon.getWeaponSwordListName());
+			WPChoiceBox.getItems().addAll(Weapon.getWeaponShotgunListName());
 			WPChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue != null && !newValue.isEmpty()) {
                     switch (newValue) {
