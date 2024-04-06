@@ -49,7 +49,7 @@ public abstract class JobWeaponTemplate {
      *
      * @return The name of the job.
      */
-    public String getStrJobName() {
+    public String getStrJobWeaponName() {
         return this.strJobWeaponName;
     }
 

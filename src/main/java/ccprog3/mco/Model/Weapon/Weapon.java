@@ -1,4 +1,5 @@
 package ccprog3.mco.Model.Weapon;
+import ccprog3.mco.Model.Job.Job;
 import ccprog3.mco.Model.Job.JobWeaponTemplate;
 
 public class Weapon extends JobWeaponTemplate{
@@ -69,4 +70,103 @@ public class Weapon extends JobWeaponTemplate{
 		    new Weapon("Golden Order Seal", 10000, 14, 20, 55, 0, 65, 65),
 		    new Weapon("Dragon Communion Seal", 15000, 18, 25, 60, 0, 75, 80)
 		};
+	
+    public static Weapon[] getWeaponSwordList() {
+        return arrWeaponSwordList;
+    }
+
+    public static Weapon[] getWeaponKatanaList() {
+        return arrWeaponKatanaList;
+    }
+
+    public static Weapon[] getWeaponWhipsList() {
+        return arrWeaponWhipsList;
+    }
+
+    public static Weapon[] getWeaponGreatswordList() {
+        return arrWeaponGreatswordList;
+    }
+
+    public static Weapon[] getWeaponStavesList() {
+        return arrWeaponStavesList;
+    }
+
+    public static Weapon[] getWeaponSealsList() {
+        return arrWeaponSealsList;
+    }
+    
+    public static String[] getWeaponSwordListName() {
+        String[] wpSword = new String[getWeaponSwordList().length];
+        for (int i = 0; i < getWeaponSwordList().length; i++) {
+        	wpSword[i] = getWeaponSwordList()[i].getStrJobWeaponName();
+        }
+        return wpSword;
+    }
+    
+    public static String[] getWeaponKatanaListName() {
+        String[] wpKatana = new String[getWeaponKatanaList().length];
+        for (int i = 0; i < getWeaponKatanaList().length; i++) {
+        	wpKatana[i] = getWeaponKatanaList()[i].getStrJobWeaponName();
+        }
+        return wpKatana;
+    }
+    
+    public static String[] getWeaponWhipsListName() {
+        String[] wpWhips = new String[getWeaponWhipsList().length];
+        for (int i = 0; i < getWeaponWhipsList().length; i++) {
+            wpWhips[i] = getWeaponWhipsList()[i].getStrJobWeaponName();
+        }
+        return wpWhips;
+    }
+
+    public static String[] getWeaponGreatswordListName() {
+        String[] wpGreatsword = new String[getWeaponGreatswordList().length];
+        for (int i = 0; i < getWeaponGreatswordList().length; i++) {
+            wpGreatsword[i] = getWeaponGreatswordList()[i].getStrJobWeaponName();
+        }
+        return wpGreatsword;
+    }
+
+    public static String[] getWeaponStavesListName() {
+        String[] wpStaves = new String[getWeaponStavesList().length];
+        for (int i = 0; i < getWeaponStavesList().length; i++) {
+            wpStaves[i] = getWeaponStavesList()[i].getStrJobWeaponName();
+        }
+        return wpStaves;
+    }
+
+    public static String[] getWeaponSealsListName() {
+        String[] wpSeals = new String[getWeaponSealsList().length];
+        for (int i = 0; i < getWeaponSealsList().length; i++) {
+            wpSeals[i] = getWeaponSealsList()[i].getStrJobWeaponName();
+        }
+        return wpSeals;
+    }
+    
+    public Weapon getSpecificWeaponSwordbyIndex(int dIndex) {
+        if (dIndex >= 0 && dIndex < getWeaponSwordList().length) {
+            return getWeaponSwordList()[dIndex];
+        } else {
+            System.out.println("Not Found");
+            return null;
+        }
+    }
+    
+    public String arrWeapSwordListToStringPrintByIndex(int index) {
+        StringBuilder strBuilder = new StringBuilder();
+        JobWeaponTemplate weap = getWeaponSwordList()[index];
+        strBuilder.append("\n")
+                .append("Rune Cost: ").append(weap.getDLevel()).append("\n")
+                .append("Dexterity: ").append(weap.getDHP()).append("\n")
+                .append("Health Points: ").append(weap.getDDex()).append("\n")
+                .append("Endurance: ").append(weap.getDInt()).append("\n")
+                .append("Strength: ").append(weap.getDEnd()).append("\n")
+                .append("Intelligence: ").append(weap.getDStr()).append("\n")
+                .append("Faith: ").append(weap.getDFth()).append("\n");
+        return strBuilder.toString();
+    }
+    
+    
+    
+
 }

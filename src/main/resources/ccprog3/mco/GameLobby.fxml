@@ -39,7 +39,7 @@
                   <MenuButton fx:id="GLMB" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Fast Travel" textAlignment="CENTER" textFill="#e9e6a9">
                     <items>
                       <MenuItem fx:id="SVCConMen" mnemonicParsing="false" onAction="#switchToStormVeilCastle" text="StormVeil Castle" />
-                        <MenuItem fx:id="RLAConMen" mnemonicParsing="false" text="Raya Lucaria Academy" />
+                        <MenuItem fx:id="RLAConMen" mnemonicParsing="false" onAction="#switchToRayaLucaria" text="Raya Lucaria Academy" />
                         <MenuItem fx:id="ETConMen" disable="true" mnemonicParsing="false" text="Elden Throne" visible="false" />
                     </items>
                      <font>
@@ -57,7 +57,7 @@
                         <Glow level="1.0" />
                      </effect>
                   </Button>
-                  <Button fx:id="INV" mnemonicParsing="false" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Inventory" textFill="#e9e6a9" wrapText="true">
+                  <Button fx:id="INV" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="107.0" prefWidth="551.0" style="-fx-background-color: transparent;" text="Inventory" textFill="#e9e6a9" wrapText="true">
                      <font>
                         <Font name="Leelawadee" size="38.0" />
                      </font>

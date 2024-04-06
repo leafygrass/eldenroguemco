@@ -86,11 +86,17 @@ public class GameLobbyController {
     private void switchToStormVeilCastle(ActionEvent event) throws IOException {
     	Driver.setRoot("SVCfirstFloor");
     }
+    
+    @FXML
+    private void switchToInventory(ActionEvent event) throws IOException {
+    	Driver.setRoot("Inventory");
+    }
 
-//    @FXML
-//    private void switchToRayaLucariaAcademy(ActionEvent event) throws IOException {
-//    	Driver.setRoot("RayaLucaria");
-//    }
+
+    @FXML
+    private void switchToRayaLucaria(ActionEvent event) throws IOException {
+    	Driver.setRoot("RLfirstFloor");
+    }
 //
 //    @FXML
 //    private void switchToEldenThrone(ActionEvent event) throws IOException{

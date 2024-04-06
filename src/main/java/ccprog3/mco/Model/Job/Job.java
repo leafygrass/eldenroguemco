@@ -49,7 +49,7 @@ public class Job extends JobWeaponTemplate{
     public static String[] getJobNames() {
         String[] jobNames = new String[arrJobList.length];
         for (int i = 0; i < arrJobList.length; i++) {
-            jobNames[i] = arrJobList[i].getStrJobName();
+            jobNames[i] = arrJobList[i].getStrJobWeaponName();
         }
         return jobNames;
     }
@@ -76,7 +76,7 @@ public class Job extends JobWeaponTemplate{
      */
     public String getJobName(int dIndex) {
         if (dIndex >= 0 && dIndex < arrJobList.length) {
-            return arrJobList[dIndex].getStrJobName();
+            return arrJobList[dIndex].getStrJobWeaponName();
         } else {
             return "Not Found";
         }
